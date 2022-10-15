@@ -1,5 +1,7 @@
 # 202210-w2weekend challenge-rafael.garcia
 
+GAME OF LIFE
+
 Un resumen de las reglas:
 
     Una célula viva sigue las siguientes reglas:
