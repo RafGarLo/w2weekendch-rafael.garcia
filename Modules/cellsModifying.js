@@ -1,10 +1,23 @@
 import { gameOfLife } from './board.js';
+//import { countingAliveNeightbours } from './initialGrid.js';
 
-//import { AliveItems, countingAliveNeightbours } from './Modules/initialGrid.js';
-//import { DeathItems, countingDeathNeightbours } from './Modules/initialGrid.js';
+import { countingAliveNeighbours } from './initialGrid.js';
+import { countingDeathNeighbours } from './initialGrid.js';
 
 export const changingCellStatus = (board) => {
+    const dataDeadItems = countingDeathNeighbours(board);
+    const dataAliveItems = countingAliveNeighbours(board);
     let board2 = board;
+    dataDeadItems.forEach((deathItem) => {
+        if (deathItem.countN === 3) {
+            board2[deathItem.r][deathItem.c] = 1;
+        }
+    });
+    dataAliveItems.forEach((aliveItem) => {
+        if (aliveItem.countN < 2) {
+            board2[aliveItem.r][aliveItem.c] = 0;
+        }
+    });
     return board2;
 };
-console.log(changingCellStatus(gameOfLife));
+console.table(changingCellStatus(gameOfLife));
