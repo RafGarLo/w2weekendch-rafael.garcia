@@ -1,8 +1,9 @@
 import { gameOfLife } from './board.js';
-//import { countingAliveNeightbours } from './initialGrid.js';
 
-import { countingAliveNeighbours } from './initialGrid.js';
-import { countingDeathNeighbours } from './initialGrid.js';
+import {
+    countingAliveNeighbours,
+    countingDeathNeighbours,
+} from './initialGrid.js';
 
 export const changingCellStatus = (board) => {
     const dataDeadItems = countingDeathNeighbours(board);

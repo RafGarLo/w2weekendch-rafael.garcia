@@ -1,5 +1,3 @@
-import { gameOfLife } from './board.js';
-
 export function AliveItems(r, c, countN) {
     this.r = r;
     this.c = c;
