@@ -1,10 +1,6 @@
 import { gameOfLife } from './Modules/board.js';
+import { boardLoop } from './Modules/boardChanges.js';
 
-import {
-    countingAliveNeighbours,
-    countingDeathNeighbours,
-} from './Modules/initialGrid.js';
-
-console.log(countingAliveNeighbours(gameOfLife));
-console.log(countingDeathNeighbours(gameOfLife));
-console.table(gameOfLife);
+setInterval(() => {
+    boardLoop(gameOfLife);
+}, 1000);
