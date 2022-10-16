@@ -5,9 +5,7 @@ describe('testing changingCellStatus', () => {
     test('Given a grid with dead and alive cells, result should never have all alive cells due to superpopulation rule', () => {
         let result = changingCellStatus(gameOfLife);
         expect(() => {
-            result.every((item) => {
-                item === 0;
-            });
+            result.every((item) => item === 0);
         }).toBeFalsy;
     });
 });

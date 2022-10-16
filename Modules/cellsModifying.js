@@ -22,16 +22,13 @@ export const changingCellStatus = (board) => {
             board2[aliveItem.r][aliveItem.c] = 0;
         }
     });
-     let cell = 0;
-    if (board2.every(item => item = cell)) {
-        return 'Error: This calculation has gone sideways. Sorry about that')
+    let cell = 0;
+    if (board2.every((item) => (item = cell))) {
+        return 'Error: This calculation has gone sideways. Sorry about that';
     }
-        if (
-            !board2.some((item) => {
-                item === 1;
-                return 'Error: This calculation has gone sideways. Sorry about that';
-            })
-        )
-            return board2;
+    if (!board2.some((item) => (item = 1))) {
+        return 'Error: This calculation has gone sideways. Sorry about that';
+    }
+    return board2;
 };
 console.table(changingCellStatus(gameOfLife));
