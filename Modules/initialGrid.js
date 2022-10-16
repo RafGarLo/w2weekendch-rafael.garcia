@@ -5,6 +5,11 @@ export function AliveItems(r, c, countN) {
 }
 
 export const countingAliveNeighbours = (array) => {
+    const errorThree =
+        'Error: to use this function you can only enter an array';
+    if (!Array.isArray(array)) {
+        throw errorThree;
+    }
     let arrayAliveObjects = [];
     for (let i = 1; i < array.length - 1; i++) {
         for (let j = 1; j < array.length + 1; j++) {
@@ -32,6 +37,11 @@ export function DeathItems(r, c, countN) {
 }
 
 export const countingDeathNeighbours = (array) => {
+    const errorThree =
+        'Error: to use this function you can only enter an array';
+    if (!Array.isArray(array)) {
+        throw errorThree;
+    }
     let arrayDeadObjects = [];
     for (let i = 1; i < array.length - 1; i++) {
         for (let j = 1; j < array.length + 1; j++) {
@@ -49,5 +59,6 @@ export const countingDeathNeighbours = (array) => {
             }
         }
     }
+
     return arrayDeadObjects;
 };
